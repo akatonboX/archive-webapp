@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#シンボリックリンクであるsrc/commonを除外
+/src/common

@@ -7,6 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "initialize": "npx symlink-dir ../common/src ./src/common"
+  },
+  "dependencies": {
+    "ts-react-app-base": "*"
   }
 }

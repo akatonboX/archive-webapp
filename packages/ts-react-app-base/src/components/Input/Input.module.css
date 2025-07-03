@@ -1,0 +1,46 @@
+.ts-input {
+  font-family: inherit;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  color: #333;
+}
+
+.ts-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.ts-input:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* サイズ */
+.ts-input--small {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.ts-input--medium {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.ts-input--large {
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+}
+
+/* エラー状態 */
+.ts-input--error {
+  border-color: #dc3545;
+}
+
+.ts-input--error:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
