@@ -1,0 +1,7 @@
+@use "../common/style";
+.root{
+  > div{
+    display: flex;
+    flex-direction: column;
+  }
+}
