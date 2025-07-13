@@ -7,9 +7,12 @@ import { AnchorPage } from "./page/anchorPage";
 import { LoginProvider } from "./common/lib/authentication";
 import { createDummyLogin, DummyLoginPage } from "./common/lib/dummyLogin";
 import { ApiPage } from "./page/apiPage";
+import { createAuth0Login } from "./common/lib/auth0Login";
 
 
 function App() {
+  const loginImplementation = import.meta.env.VITE_IS_ENABLE_DUMMY_LOGIN == "true" ? createDummyLogin({appName: "test-app"})
+                                                                                   : createAuth0Login(import.meta.env.VITE_AUTH0_DOMAIN, import.meta.env.VITE_AUTH0_CLIENT_ID);
   return (
     <RouterProvider router={createBrowserRouter(createRoutesFromElements(
       <Route 
@@ -20,7 +23,7 @@ function App() {
         element={
           <>
             <DirectorySlash />
-            <LoginProvider implementation={createDummyLogin({appName: "test-app"})}>
+            <LoginProvider implementation={loginImplementation}>
               <Outlet />
             </LoginProvider>
           </>

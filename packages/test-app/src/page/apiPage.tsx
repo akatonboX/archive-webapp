@@ -43,7 +43,7 @@ export function ApiPage() {
           
         </div>
         <div>
-          <span>相対パス</span>
+          <span>profile</span>
           <button onClick={async () => {
             console.log("■", await axios.get<Api.Me>("/user/0/profile"));
           }}>getを実行</button>
