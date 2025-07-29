@@ -14,10 +14,5 @@ export function DirectorySlash(){
     }
   }, [location.pathname]);
 
-  // const { pathname, search, hash } = window.location;
-  // React.useEffect(() => {
-  //   const newUrl = `${pathname}/${search}${hash}`;
-  //   window.history.replaceState(null, "", newUrl);
-  // }, [pathname]);
   return <></>;
 }

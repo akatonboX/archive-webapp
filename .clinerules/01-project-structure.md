@@ -47,7 +47,7 @@ packages/
 
 ### ローカル実行のコマンド
 - ルートディレクトリで、yarnを使用して下さい。
-- `yarn workspace test-app dev`でtest-appが起動します。`http://localhost:5173/test-app/`でアクセスして下さい。
+- `yarn workspace test-app dev`でtest-appが起動します。`http://localhost:3000/test-app/`でアクセスして下さい。
 - ポート番号は5173で起動します。
 
 ### module.scss

@@ -1,0 +1,33 @@
+/* 横並びのドックレイアウト */
+.dock-h {
+  @apply flex flex-row box-border;
+}
+.l-dock-h > * {
+  @apply flex-none box-border;
+}
+.l-dock-h > .main { /*メインコンテンツ(親コンポーネントのサイズに寄って伸びるコンテンツ）に指定する*/
+  @apply flex-auto overflow-auto;
+}
+.l-dock-h > .scroll {/*コンポーネントの中で、強制的にスクロールさせる*/
+  @apply relative;
+}
+.l-dock-h > .scroll > :first-child {
+  @apply absolute w-full h-full overflow-auto;
+}
+
+/* 縦並びのドックレイアウト */
+.l-dock-v {
+  @apply flex flex-col box-border;
+}
+.l-dock-v > * {
+  @apply flex-none box-border;
+}
+.l-dock-v > .main {/*メインコンテンツ(親コンポーネントのサイズに寄って伸びるコンテンツ）に指定する*/
+  @apply flex-auto overflow-auto;
+}
+.l-dock-v > .scroll {/*コンポーネントの中で、強制的にスクロールさせる*/
+  @apply relative;
+}
+.l-dock-v > .scroll > :first-child {
+  @apply absolute w-full h-full overflow-auto;
+}

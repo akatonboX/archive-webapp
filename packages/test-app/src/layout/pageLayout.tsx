@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./pageLayout.module.scss";
 import { AppBar, Drawer, Toolbar } from "@mui/material";
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { Anchor } from "../common/component/anchor";
@@ -17,13 +16,13 @@ export function PageLayout(
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <>
-      <div className={`${styles.root} ${styles.verticalDock}`}>
+      <div className="l-dock-v bg-neutral-100">
         <div>{/*ヘッダ-*/}
           <AppBar position="static" style={{backgroundColor: "#ffffff"}}>
             <Toolbar variant="dense">
-              <div className={styles.toolbarLayout}>
+              <div>
                 <div>
-                  <button className={styles.iconButton} onClick={e => {setIsMenuOpen(true);}}>
+                  <button onClick={() => {setIsMenuOpen(true);}}>
                     <MenuOpenIcon />
                   </button>
                 </div>
@@ -31,18 +30,18 @@ export function PageLayout(
             </Toolbar>
           </AppBar>
         </div>
-        <div className={`${styles.verticalDock} ${styles.main}`}>{/*ページ*/}
-          <div className={styles.horizontalDock}>{/*ページヘッダ*/}
-            <div className={styles.pageTitle}> {/* タイトル */}
+        <div className="l-dock-v main m-2.5">{/*ページ*/}
+          <div className="l-dock-h">{/*ページヘッダ*/}
+            <div className="text-4xl mb-2.5"> {/* タイトル */}
               <span><b>{props.title}</b></span> 
             </div>
-            <div className={styles.main}> {/* ツールエリア.+ */}
+            <div className="main"> {/* ツールエリア.+ */}
               {props.toolsChildren}
             </div>
            
           </div>
           
-          <div className={styles.main}>{/*ページボディ*/}
+          <div className="main">{/*ページボディ*/}
             {(props.isInitialized ?? true) ? props.children : <div />}
           </div>
         </div>
@@ -51,7 +50,7 @@ export function PageLayout(
         </div>
       </div>
       <Drawer anchor="left" open={isMenuOpen} onClose={() => {setIsMenuOpen(false);}}>
-        <div className={styles.menuRoot}>
+        <div className="m-5 flex flex-col">
           {!auth.isAuthenticated ? <button onClick={async () => {await auth.login();} }>ログイン</button> : <button onClick={async () => {await auth.logout();} }>ログアウト</button> }
           <Anchor href="/">home</Anchor>
           <Anchor href="/anchor/page1/">anchorPage</Anchor>

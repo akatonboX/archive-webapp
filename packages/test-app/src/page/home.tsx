@@ -3,6 +3,9 @@ import { PageLayout } from "../layout/pageLayout";
 export function Home() {
   return(
     <PageLayout title="Home">
+       <button onClick={() => {document.documentElement.classList.toggle('dark');}}>Toggle Theme</button><br/><br/>
+
+       <div className="test">aaa</div>
       hoge<br/>
 hoge<br/>
 hoge<br/>
